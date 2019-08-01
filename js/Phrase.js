@@ -3,27 +3,25 @@
  * Phrase.js
  * Author: Jonathan J. Jolivette*/
 
+// Phrase class to handles the creation of phrases...
 class Phrase {
-	constructor(phrase = 'hello') {
-		this.phrase = phrase;
+	//Phrase class constructor method receives one parameter: `phrase`...
+	constructor(phrase) {
+		this.phrase = phrase; //This is the actual phrase the Phrase object is representing.
 	}
 
 	addPhraseToDisplay() {
 		const phrase = this.phrase;
-		const phraseWrapper = document.createElement('div');
-		phraseWrapper.setAttribute('id', 'phrase');
-		phraseWrapper.setAttribute('class', 'section');
-
-		const letterList = document.createElement('ul');
+		console.log(phrase);
+		const list = document.getElementById('phrase').firstElementChild;
+		console.log(list);
 
 		for (let i = 0; i < phrase.length; i++) {
 			const letterItem = `<li class="hide letter ${phrase[i]}"> ${phrase[i]} </li>`;
-			letterList.append(letterItem);
+			//Reference:   https://stackoverflow.com/questions/6304453/javascript-append-html-to-container-element-without-innerhtml
+			list.insertAdjacentHTML('beforeEnd', letterItem);
 		}
-
-		phraseWrapper.append(letterList);
 	}
-
 	checkLetter() {}
 
 	showMatchedLetter() {}
