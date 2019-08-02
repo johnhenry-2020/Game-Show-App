@@ -75,12 +75,18 @@ class Game {
 	checkForWin() {
 		const showCount = document.querySelectorAll('.show').length;
 		const letterCount = this.phraseClass.phrase.length;
+		// const confetti = document.getElementById('#confetti');
 
 		if (letterCount === showCount) {
 			this.gameOver(`Congratulations! You Guessed it... "${this.chosenPhrase}" is correct!`);
+			const canvas = document.getElementById('confetti');
+			canvas.setAttribute('id', 'showMe');
+
+			$(canvas).delay(2500).fadeOut();
+			$('#game-over-message').delay(2500).addClass('flash');
 		}
 	}
-
+	btn__reset;
 	gameOver(message) {
 		document.getElementById('overlay').style.display = 'block';
 		document.getElementById('game-over-message').innerHTML = message;

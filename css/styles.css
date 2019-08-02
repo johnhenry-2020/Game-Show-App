@@ -48,6 +48,65 @@ h1 {
 	font-size: 20px;
 }
 
+.flash {
+	-moz-animation: flash 2s ease-out;
+	-moz-animation-iteration-count: 1;
+
+	-webkit-animation: flash 2s ease-out;
+	-webkit-animation-iteration-count: 1;
+
+	-ms-animation: flash 2s ease-out;
+	-ms-animation-iteration-count: 1;
+}
+
+@keyframes flash {
+	0% {
+		background-color: transparent;
+	}
+	50% {
+		background-color: #fffa73;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+@-webkit-keyframes flash {
+	0% {
+		background-color: transparent;
+	}
+	50% {
+		background-color: #fffa73;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+@-moz-keyframes flash {
+	0% {
+		background-color: transparent;
+	}
+	50% {
+		background-color: #fffa73;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+@-ms-keyframes flash {
+	0% {
+		background-color: transparent;
+	}
+	50% {
+		background-color: #fffa73;
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
 button {
 	margin: 6px;
 	border: 1px solid transparent;
@@ -65,6 +124,11 @@ button {
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
+}
+
+#btn__reset:hover {
+	color: white;
+	background-color: #808080;
 }
 
 .main-container {
@@ -227,4 +291,16 @@ button {
 
 .lose a {
 	color: var(--color-lose);
+}
+
+/* Canvas */
+.hideMe {
+	display: none;
+	opacity: 0;
+}
+
+#showMe {
+	display: block;
+	opacity: 1 !important;
+	position: absolute;
 }
