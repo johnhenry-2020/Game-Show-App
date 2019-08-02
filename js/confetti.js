@@ -1,3 +1,5 @@
+// Reference: https://www.youtube.com/watch?v=GiA6ls9mOL4
+
 let canvas = document.getElementById('confetti');
 
 canvas.width = 1400;

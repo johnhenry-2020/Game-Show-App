@@ -1,6 +1,8 @@
+// Reference: https://www.html5canvastutorials.com/
+
 window.onload = function(argument) {
 	var lyric =
-		"If you feel insignificant, you better think again Better wake up 'cause you're part of something way bigger You're part of something way bigger I'll be the roots, you be the tree Pass on the fruit that was given to me Legacy, ah, we're part of something way bigger Understand the truth 'bout that question in your soul (bigger) Look up, don't look down, then watch the answers unfold (bigger) Life is your birthright, they hid that in the fine print Take the pen and rewrite it Step out your estimate Step in your essence and know that you're excellent Rise, the spirit is teachin' Oh, I'm not just preachin', I'm takin' my own advice You're part of something way bigger You're part of something way bigger Bigger than you, bigger than me Bigger than the picture they framed us to be, yeah Ooh, ooh, you're part of something way bigger Let love be the water I pour into you and you pour into me There ain't no drought here Bloom into our actual powers I'll be your sanctuary, you just don't know it yet You just don't know it yet No matter how hard it gets You got my blood in ya And you're gonna rise";
+		' user interaction front end linkedin apprenticeship blessed gifted apprenticeship team resilience jonathan jolivette software engineer apprentice  user interaction front end linkedin apprenticeship blessed gifted apprenticeship team resilience jonathan jolivette software engineer apprentice   user interaction front end linkedin apprenticeship blessed gifted apprenticeship team resilience jonathan jolivette software engineer apprentice   user interaction front end linkedin apprenticeship blessed gifted apprenticeship team resilience jonathan jolivette software engineer apprentice user interaction front end linkedin apprenticeship blessed gifted apprenticeship team resilience jonathan jolivette software engineer apprentice ';
 	var words = {};
 	var words_attr = [];
 	string_handle(lyric);
@@ -29,7 +31,6 @@ window.onload = function(argument) {
 		for (key in words) {
 			words_attr.push(new Word(key));
 		}
-		console.log(words_attr.length);
 
 		function animation() {
 			for (var i = 0; i < words_attr.length; i++) {
