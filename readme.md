@@ -1,7 +1,10 @@
 Object Orientated Javascript | Phrase Hunter Game
+---
 
-DETAILS
 
+
+DETAILS:
+--
 ABOUT PROGRAM | HOW TO PLAY THE GAME
 
 
@@ -24,7 +27,7 @@ A player can guess a letter only once. After they’ve guessed a letter, the pro
 ---
 
 
-## Technologies | Libraries | Frameworks
+## Technologies | Libraries | Frameworks:
 * HTML5
 * CSS3
 * JAVASCRIPT ES6
