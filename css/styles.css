@@ -16,6 +16,10 @@
 	--transition: all .2s ease-in-out;
 }
 
+.key {
+	box-shadow: 2.5px 5px 9px #5fcf7f;
+}
+
 /* main */
 
 * {
@@ -28,6 +32,7 @@ body {
 	flex-direction: column;
 	display: flex;
 	height: 100vh;
+	background: #000;
 }
 
 li,
@@ -47,6 +52,11 @@ h2 {
 h1 {
 	font-size: 20px;
 }
+
+/* lives (icons) */
+/* #scoreboard ol img {
+	box-shadow: 10px 10px 5px grey;
+} */
 
 .flash {
 	-moz-animation: flash 4s ease-out;
@@ -199,7 +209,7 @@ https://stackoverflow.com/questions/44513333/how-to-create-a-pulse-effect-on-an-
 /* Title */
 
 .header {
-	color: #3a3f58;
+	color: #fff;
 }
 
 /* Phrase */
@@ -340,7 +350,7 @@ https://stackoverflow.com/questions/44513333/how-to-create-a-pulse-effect-on-an-
 	color: var(--color-lose);
 }
 
-/* Canvas */
+/* Canvas - Confetti*/
 .hideMe {
 	display: none;
 	opacity: 0;
@@ -350,4 +360,10 @@ https://stackoverflow.com/questions/44513333/how-to-create-a-pulse-effect-on-an-
 	display: block;
 	opacity: 1 !important;
 	position: absolute;
+}
+
+/* Canvas - Floating Text */
+#c {
+	position: absolute;
+	z-index: -9999;
 }
