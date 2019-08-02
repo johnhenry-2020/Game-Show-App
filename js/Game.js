@@ -1,5 +1,4 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
+/* OOP Game App
  * Game.js
  * Author: Jonathan J. Jolivette*/
 
@@ -8,6 +7,7 @@ class Game {
 		this.missed = 0; //Used to track the number of missed guesses by the player. The initial value is`0`, since no guesses have been made at the start of the game.
 		this.phrases = [ 'Negus', 'Pro', 'Interactive' ]; //An array of Phrase objects to use with the game.
 		this.activePhrase = 'null'; //The Phrase object that’s currently in play.
+		this.phraseClass = '';
 	}
 
 	getRandomPhrase() {
@@ -19,20 +19,74 @@ class Game {
 	/* Class methods for starting and ending the game, handling interactions,
   getting a random phrase, checking for a win, and removing a life from the scoreboard...*/
 
-	handleInteraction(letter) {
-		console.log(letter);
-		console.log(this.chosenPhrase);
+	handleInteraction(event, letter) {
+		const letterIsInPhrase = this.phraseClass.checkLetter(letter);
+
+		if (letterIsInPhrase) {
+			this.phraseClass.showMatchedLetter(letter);
+			this.checkForWin();
+		} else {
+			if (event instanceof KeyboardEvent) {
+				const wrongInputs = document.querySelectorAll('.wrong');
+
+				if (wrongInputs) {
+					for (let i = 0; i < wrongInputs.length; i++) {
+						if (wrongInputs[i].textContent === letter) {
+							return false;
+						}
+					}
+				}
+
+				const buttonElements = document.querySelectorAll('.key');
+				let targetLetter;
+
+				for (let i = 0; i < buttonElements.length; i++) {
+					if (buttonElements[i].textContent === letter) {
+						targetLetter = buttonElements[i];
+					}
+				}
+
+				targetLetter.classList.add('wrong');
+			} else {
+				event.target.classList.add('wrong');
+			}
+
+			this.removeLife();
+		}
 	}
 
-	removeLife() {}
+	removeLife() {
+		this.missed += 1;
+		document.getElementsByClassName('tries')[0].remove();
 
-	checkForWin() {}
+		if (this.missed === 5) {
+			this.gameOver('lost, no more lives left!');
+		}
+	}
 
-	gameOver() {}
+	checkForWin() {
+		const showCount = document.querySelectorAll('.show').length;
+		const letterCount = this.phraseClass.phrase.length;
+
+		if (letterCount === showCount) {
+			this.gameOver(`You won! The word was ${this.chosenPhrase}`);
+		}
+	}
+
+	gameOver(message) {
+		document.getElementById('overlay').style.display = 'block';
+		document.getElementById('game-over-message').innerHTML = message;
+		document.getElementById('btn__reset').textContent = 'Reset Game';
+	}
 
 	startGame() {
+		if (document.getElementById('btn__reset').textContent === 'Reset Game') {
+			window.location.reload(true);
+			return false;
+		}
 		const phrase = this.getRandomPhrase();
-		const phraseClass = new Phrase(phrase);
-		phraseClass.addPhraseToDisplay();
+		this.phraseClass = new Phrase(phrase);
+		this.phraseClass.addPhraseToDisplay();
+		document.getElementById('overlay').style.display = 'none';
 	}
 }
