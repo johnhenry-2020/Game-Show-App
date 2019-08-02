@@ -1,7 +1,10 @@
-#Object Orientated Javascript | Phrase Hunter Game
+Object Orientated Javascript | Phrase Hunter Game
 
-##DETAILS
-####ABOUT PROGRAM | HOW TO PLAY THE GAME
+DETAILS
+
+ABOUT PROGRAM | HOW TO PLAY THE GAME
+
+
 
 Utilizing The JavaScript and Object Oriented Programming Priniciples I've Recently Studied, I've Set Out To Create A Browser-Based, Word Guessing Game: "Phrase Hunter.
 
