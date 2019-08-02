@@ -68,7 +68,7 @@ class Game {
 		document.getElementsByClassName('tries')[0].remove();
 
 		if (this.missed === 5) {
-			this.gameOver('lost, no more lives left!');
+			this.gameOver('Sorry, better luck next time!');
 		}
 	}
 
@@ -77,7 +77,7 @@ class Game {
 		const letterCount = this.phraseClass.phrase.length;
 
 		if (letterCount === showCount) {
-			this.gameOver(`You won! The word was ${this.chosenPhrase}`);
+			this.gameOver(`Congratulations! You Guessed it... "${this.chosenPhrase}" is correct!`);
 		}
 	}
 
