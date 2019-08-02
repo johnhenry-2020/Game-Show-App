@@ -9,7 +9,6 @@ const game = new Game();
 
 function resetDisplay() {
 	game.startGame();
-	document.getElementById('overlay').style.display = 'none';
 }
 
 function markButton(event) {

@@ -5,7 +5,15 @@
 class Game {
 	constructor() {
 		this.missed = 0; //Used to track the number of missed guesses by the player. The initial value is`0`, since no guesses have been made at the start of the game.
-		this.phrases = [ 'Negus', 'Pro', 'Interactive' ]; //An array of Phrase objects to use with the game.
+		this.phrases = [
+			'negus',
+			'user interaction',
+			'front end',
+			'linkedin',
+			'jonathan jolivette',
+			'software engineer',
+			'apprentice'
+		]; //An array of Phrase objects to use with the game.
 		this.activePhrase = 'null'; //The Phrase object that’s currently in play.
 		this.phraseClass = '';
 	}
