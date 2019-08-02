@@ -78,7 +78,8 @@ class Game {
 		// const confetti = document.getElementById('#confetti');
 
 		if (letterCount === showCount) {
-			this.gameOver(`Congratulations! You Guessed it... "${this.chosenPhrase}" is correct!`);
+			const capPhrase = this.chosenPhrase.toUpperCase();
+			this.gameOver(`You Guessed It! <br><i>${capPhrase}</i> <br>Is Correct`);
 			const canvas = document.getElementById('confetti');
 			canvas.setAttribute('id', 'showMe');
 

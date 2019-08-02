@@ -49,14 +49,14 @@ h1 {
 }
 
 .flash {
-	-moz-animation: flash 2s ease-out;
-	-moz-animation-iteration-count: 1;
+	-moz-animation: flash 4s ease-out;
+	-moz-animation-iteration-count: infinite;
 
-	-webkit-animation: flash 2s ease-out;
-	-webkit-animation-iteration-count: 1;
+	-webkit-animation: flash 4s ease-out;
+	-webkit-animation-iteration-count: infinite;
 
-	-ms-animation: flash 2s ease-out;
-	-ms-animation-iteration-count: 1;
+	-ms-animation: flash 4s ease-out;
+	-ms-animation-iteration-count: infinite;
 }
 
 @keyframes flash {
@@ -121,15 +121,62 @@ button {
 	cursor: pointer;
 }
 
-#btn__reset {
+/* #btn__reset {
 	width: 200px;
 	margin: 0 auto;
+	animation: pulse 2s infinite;
+} */
+
+#btn__reset {
+	color: #fff;
+	padding: .55em 1.25em;
+	background: #6ac773;
+	margin: 1.25em 0 .5em;
+	cursor: pointer;
+	border: 2px solid black;
+	border-radius: 4px;
+	transition: all 0.5s;
+	animation: pulse 2s infinite;
+}
+/* Pulse Effect | Reference:
+https://stackoverflow.com/questions/44513333/how-to-create-a-pulse-effect-on-an-image-for-a-couple-seconds-when-the-page-load
+*/
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 #6ac773;
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
+@keyframes pulse {
+	0% {
+		-moz-box-shadow: 0 0 0 0 rgba(6ac773);
+		box-shadow: 0 0 0 0 #6ac773;
+	}
+	70% {
+		-moz-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
 }
 
 #btn__reset:hover {
-	color: white;
-	background-color: #808080;
+	background: #fff;
+	border: 2px solid #353e44;
+	color: #6ac773;
 }
+
+/* #btn__reset:hover {
+	color: white;
+	background-color: #6ac773;
+} */
 
 .main-container {
 	display: flex;
@@ -270,7 +317,7 @@ button {
 }
 
 .start {
-	background-color: #3a3f58;
+	background-color: #000;
 }
 
 .start a {
